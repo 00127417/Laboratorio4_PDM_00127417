@@ -16,7 +16,7 @@ object NetworkUtils {
 
     private val TAG = NetworkUtils::class.java!!.getSimpleName()
 
-    fun buildUrl(movieName: String): URL? {
+    fun buildUrl(movieName: String): URL {
         val builtUri = Uri.parse(MOVIE_API_BASE_URL)
             .buildUpon()
             .appendQueryParameter("apikey", TOKEN_API)
@@ -29,9 +29,6 @@ object NetworkUtils {
         } catch (e: MalformedURLException) {
             URL("")
         }
-
-        Log.d(TAG, "Built URI " + url!!)
-
 
     }
 
